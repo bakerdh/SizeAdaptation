@@ -39,7 +39,7 @@ processdata <- 1
 # uncomment the following line:
 # renv::restore()
 
-packagelist <- c('pracma','pals','grImport','tictoc','BayesFactor','ez','renv', 'bookdown','knitr','markdown','tinytex')
+packagelist <- c('pracma','pals','grImport','tictoc','BayesFactor','ez','renv', 'bookdown','knitr','markdown','tinytex','osfr')
 missingpackages <- packagelist[!packagelist %in% installed.packages()[,1]]
 if (length(missingpackages)>0){install.packages(missingpackages)}
 toinstall <- packagelist[which(!packagelist %in% (.packages()))]
@@ -103,6 +103,25 @@ make_soft_window <- function(W,H,D=0.9){
   return(mask)}
 
 knitr::opts_chunk$set(echo = FALSE)
+
+if (!dir.exists('local')){dir.create('local')}
+if (!dir.exists('Figures')){dir.create('Figures')}
+
+osfproject <- osf_retrieve_node("kthg3")
+osffiles <- osf_ls_files(osfproject,n_max=300)
+
+if (!file.exists('local/2011controllong.csv')){
+  hid <- pmatch('2011controllong.csv',as.character(unlist(osffiles[,1])))
+  osf_download(osffiles[hid,], path='local/')
+}
+if (!file.exists('local/2011datalong.csv')){
+  hid <- pmatch('2011datalong.csv',as.character(unlist(osffiles[,1])))
+  osf_download(osffiles[hid,], path='local/')
+}
+if (!file.exists('local/2011pilot.csv')){
+  hid <- pmatch('2011pilot.csv',as.character(unlist(osffiles[,1])))
+  osf_download(osffiles[hid,], path='local/')
+}
 
 ```
 
