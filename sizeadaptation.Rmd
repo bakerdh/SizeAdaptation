@@ -122,6 +122,12 @@ if (!file.exists('local/2011pilot.csv')){
   hid <- pmatch('2011pilot.csv',as.character(unlist(osffiles[,1])))
   osf_download(osffiles[hid,], path='local/')
 }
+if (!file.exists('elife.csl')){
+download.file('https://github.com/bakerdh/SizeAdaptation/blob/main/elife.csl')
+}
+if (!file.exists('references.bib')){
+download.file('https://github.com/bakerdh/SizeAdaptation/blob/main/references.bib')
+}
 
 ```
 
