@@ -123,10 +123,10 @@ if (!file.exists('local/2011pilot.csv')){
   osf_download(osffiles[hid,], path='local/')
 }
 if (!file.exists('elife.csl')){
-download.file('https://github.com/bakerdh/SizeAdaptation/blob/main/elife.csl')
+download.file('https://raw.githubusercontent.com/bakerdh/SizeAdaptation/main/elife.csl','elife.csl')
 }
 if (!file.exists('references.bib')){
-download.file('https://github.com/bakerdh/SizeAdaptation/blob/main/references.bib')
+download.file('https://raw.githubusercontent.com/bakerdh/SizeAdaptation/main/references.bib','references.bib')
 }
 
 ```
