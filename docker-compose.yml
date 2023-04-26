@@ -4,8 +4,8 @@ services:
     build:
       dockerfile: docker/Dockerfile
       context: .
-    container_name: bakerdh/SizeAdaptation:knit
-    image: bakerdh/SizeAdaptation:knit
+    container_name: bakerdh/sizeadaptation:knit
+    image: bakerdh/sizeadaptation:knit
     volumes:
       - .:/home/rstudio
     environment:
