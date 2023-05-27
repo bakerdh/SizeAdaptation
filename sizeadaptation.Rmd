@@ -485,7 +485,7 @@ if(outputplot==1){postscript('ori1.ps', horizontal = FALSE, onefile = FALSE, pap
   title(xlab="Retinal eccentricity (deg)", col.lab=rgb(0,0,0), line=1.2, cex.lab=1.5)    # titles for axes
   title(ylab="Mechanism sensitivity", col.lab=rgb(0,0,0), line=1.5, cex.lab=1.5)
   title(main="Post-adaptation", cex.main=1.5)
-  
+
   toplot <- seq(1,length(filterszs),10)
   colpal <- kovesi.linear_kry_5_98_c75(length(toplot))
   for (n in 1:length(toplot)){
